@@ -1,10 +1,11 @@
 {
-  "name": "day-counter",
+  "name": "day-counter-vanilla-js",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "dev": "npx parcel index.html",
-    "build": "parcel build index.html --public-url /%npm_package_name%/"
+    "build": "parcel build index.html --public-url /%npm_package_name%/",
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",
