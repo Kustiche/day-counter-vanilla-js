@@ -2,6 +2,7 @@
   "name": "day-counter-vanilla-js",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
     "dev": "npx parcel index.html",
     "build": "parcel build index.html --public-url /%npm_package_name%/",
