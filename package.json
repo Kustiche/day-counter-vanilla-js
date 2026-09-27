@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npx parcel index.html",
-    "build": "parcel build index.html --public-url /%npm_package_name%/",
+    "build": "parcel build index.html --public-url /day-counter-vanilla-js/",
     "lint": "eslint"
   },
   "repository": {
