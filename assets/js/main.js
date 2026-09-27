@@ -1,18 +1,9 @@
-import moment from '../node_modules/moment/moment';
+import moment from '../../node_modules/moment/moment';
 import flatpickr from 'flatpickr';
 import { flatpickrConfig } from './flatpickr';
 import { declOfNum } from './declOfNum';
 
-import {
-  form,
-  date,
-  yearsBlock,
-  daysBlock,
-  hoursBlock,
-  yearsText,
-  daysText,
-  hoursText,
-} from './view';
+import { form, date, yearsBlock, daysBlock, hoursBlock, yearsText, daysText, hoursText } from './view';
 
 flatpickr('input[type="text"]', flatpickrConfig);
 
@@ -24,17 +15,17 @@ form.addEventListener('submit', (event) => {
 const count = () => {
   const dateValue = moment(date.value);
   const now = moment();
-  let dateDiff = dateValue - now;
+  const dateDiff = dateValue - now;
 
   if (isNaN(dateValue)) {
     return;
   }
 
-  let years = dateValue.diff(now, 'years');
+  const years = dateValue.diff(now, 'years');
   yearsBlock.textContent = years;
 
   let leapYears = 0;
-  let nextYear = dateValue.year();
+  const nextYear = dateValue.year();
   let year = now.year();
 
   for (leapYears; year <= nextYear; year++) {
@@ -43,10 +34,10 @@ const count = () => {
     }
   }
 
-  let days = Math.round(dateDiff / 1000 / 60 / 60 / 24 + leapYears) % 365;
+  const days = Math.round(dateDiff / 1000 / 60 / 60 / 24 + leapYears) % 365;
   daysBlock.textContent = days;
 
-  let hours = Math.round(dateDiff / 1000 / 60 / 60) % 24;
+  const hours = Math.round(dateDiff / 1000 / 60 / 60) % 24;
   hoursBlock.textContent = hours;
 
   yearsText.textContent = declOfNum(years, ['год', 'года', 'лет']);
